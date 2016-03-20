@@ -10,7 +10,8 @@ class ARM1{
     /* 随机化字符串，可以测试你的实例化对象是否已经静态化 */
     public static $random = "random";
 
-     public function run() {
+    static public function run() {
+        echo "ARM1";
         /*
         * 返回当前类的实例化对象
         * 请使用单例模式
@@ -22,6 +23,7 @@ class ARM1{
             self::$random = new self;
         }
 		return self::$random;
+
 	}
     private function __construct(){
 

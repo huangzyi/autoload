@@ -29,7 +29,7 @@ abstract class Main extends Hero{
     abstract public function run(
         /*  */
     );
-    public function call(){
+    static public function call(){
         include ('../autoload.php');
     }
     static abstract public function equip(

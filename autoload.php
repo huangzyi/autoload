@@ -1,13 +1,17 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
-define('BASEDIR',__DIR__);
+// Your custom class dir
+define('CLASS_DIR', __DIR__);
 
-    function autoload($class){
-        $dir =  str_replace('\\', '/',BASEDIR.'/'. $class) . '.class.php';
-        //var_dump($dir);
-        require("$dir");
-    }
-    spl_autoload_register('autoload');
+    // Add your class dir to include path
+    set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+
+    // You can use this trick to make autoloader look for commonly used "My.class.php" type filenames
+    spl_autoload_extensions('.class.php');
+
+    // Use default autoload implementation
+    spl_autoload_register();
+
 
 
 

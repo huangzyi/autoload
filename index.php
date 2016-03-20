@@ -1,5 +1,7 @@
 <?php
-use Hero\Main;
+
+use Hero\Arms\ARM1 as ARM1;
+use Hero\Power\XPower as X;
 include('Hero/Main.class.php');
 abstract class fighting extends Main{
      static function equip(
@@ -12,13 +14,13 @@ abstract class fighting extends Main{
     )
     {
         // TODO: Implement equip() method.
-        self::call();
+        PARENT::call();
         Hero\Arms\ARM1::run();
         X::run();
 
     }
     static function attack(
-        /*  */
+
     )
     {
         // TODO: Implement attack() method.
